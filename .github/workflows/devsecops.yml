@@ -34,7 +34,6 @@ jobs:
           --health-retries 5
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
@@ -66,8 +65,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v3
         with:
           args: >
-            -Dsonar.projectKey=REPLACE_ME_PROJECT_KEY
-            -Dsonar.organization=REPLACE_ME_ORG_KEY
+            -Dsonar.projectKey=devsecops-product-api
+            -Dsonar.organization=shashanka
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
