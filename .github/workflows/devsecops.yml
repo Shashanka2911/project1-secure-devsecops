@@ -1,3 +1,4 @@
+```yaml
 name: DevSecOps Pipeline
 
 on:
@@ -65,8 +66,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v3
         with:
           args: >
-            -Dsonar.projectKey=YOUR_PROJECT_KEY
-            -Dsonar.organization=YOUR_ORG_NAME
+            -Dsonar.projectKey=REPLACE_ME_PROJECT_KEY
+            -Dsonar.organization=REPLACE_ME_ORG_KEY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -107,3 +108,4 @@ jobs:
         run: |
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+```
