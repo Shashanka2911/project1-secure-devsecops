@@ -13,6 +13,10 @@ app = FastAPI(
     description="Product API for the DevSecOps project",
     version="1.0.0"
 )
+@app.on_event("startup")
+def startup_event():
+    Base.metadata.create_all(bind=engine)
+
 
 Instrumentator().instrument(app).expose(app)
 
