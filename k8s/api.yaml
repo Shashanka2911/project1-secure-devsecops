@@ -33,12 +33,13 @@ spec:
               cpu: "250m"
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
   name: product-api-service
   namespace: devsecops
+  labels:
+    app: product-api
 spec:
   selector:
     app: product-api
