@@ -18,7 +18,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data #data dependencies and data sharing
+      - postgres_data:/var/lib/postgresql/data #data dependencies and data sharing and data is stored separately (without volume:if docker compose is down your database is disappear when the container is removed)
 
 volumes:
   postgres_data:
